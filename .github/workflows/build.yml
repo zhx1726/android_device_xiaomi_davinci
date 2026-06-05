@@ -1,11 +1,13 @@
 name: Build TWRP
 on: push
 jobs:
-  build:
+  build-twrp:
     runs-on: ubuntu-latest
     steps:
-      - uses: rom-builder/twrp-builder@main
+      - name: Build
+        uses: sebastiansokol/twrp-builder@latest
         with:
           device: davinci
-          brand: xiaomi
-          android_ver: 9.0
+          codename: davinci
+          vendor: xiaomi
+          android: 9.0
